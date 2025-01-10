@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Listings</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Airbnb Listings - Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Neighborhood</th>
+                <th>Price</th>
+                <th>Number of Reviews</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data.itertuples() %}
+                <tr>
+                    <td>{{ row.neighbourhood }}</td>
+                    <td>{{ row.price }}</td>
+                    <td>{{ row.number_of_reviews }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
